@@ -9,7 +9,7 @@ const dataUser = {
 }
 
 // test untuk API register
-describe("POST /users/register", () => {
+describe("Test User register", () => {
 
   afterAll(async () => {
     try {
@@ -19,7 +19,7 @@ describe("POST /users/register", () => {
     }
   })
 
-  it("Should be response 201", (done) => {
+  it("Should be success created user", (done) => {
     request(app)
     .post("/users/register")
     .send(dataUser)
@@ -37,7 +37,7 @@ describe("POST /users/register", () => {
   })  
 })
 
-describe("POST /users/login", () => {
+describe("Test User Login", () => {
   beforeAll(async () => {
     try {
       await User.create(dataUser)
@@ -46,7 +46,7 @@ describe("POST /users/login", () => {
     }
   })
 
-  it("Should be response 200", (done) => {
+  it("Should be login success", (done) => {
     request(app)
     .post("/users/login")
     .send({
