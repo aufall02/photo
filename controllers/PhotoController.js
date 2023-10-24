@@ -30,7 +30,7 @@ class PhotoController {
           UserId: userData.id
         }
       })
-
+    
       if (!data) {
         throw {
           code: 404,
@@ -130,7 +130,7 @@ class PhotoController {
 
     } catch (error) {
       console.log(error.message);
-      res.status(error.code || 500).json(error.message)
+      res.status(error.code || 500).json(error)
       
     }
   }
